@@ -1,0 +1,17 @@
+name: CD Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploay via SSh
+      uses: appleboy/ssh-action@ma
+
+    - name: Deploy application
+      run: |
+        echo "Deploying application..."
