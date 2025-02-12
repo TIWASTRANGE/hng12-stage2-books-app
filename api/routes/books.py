@@ -70,10 +70,11 @@ async def get_book(book_id: int) -> Book:
     if book is None:
         return JSONResponse(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail="Book not found"
+            content={"detail":"Book not found"}
         )
     
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content=book.model_dump(),  # Assuming `model_dump()` serializes the book
+        content=book.model_dump(), 
     )
+
